@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: kmagnelli/api-bootcamp-produto:v2
+        image: kmagnelli/api-bootcamp-produto
         # resources:
         #   requests:
         #     memory: "32Mi"
