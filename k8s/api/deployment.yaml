@@ -15,31 +15,31 @@ spec:
       containers:
       - name: api
         image: kmagnelli/api-bootcamp-produto:v2
-        resources:
-          requests:
-            memory: "32Mi"
-            cpu: "100m"
-          limits:
-            memory: "64Mi"
-            cpu: "200m"
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8080
-          initialDelaySeconds: 0
-          periodSeconds: 5
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 1
-        readinessProbe:
-          httpGet:
-            path: /read
-            port: 8080
-          initialDelaySeconds: 0
-          periodSeconds: 1
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 1
+        # resources:
+        #   requests:
+        #     memory: "32Mi"
+        #     cpu: "100m"
+        #   limits:
+        #     memory: "64Mi"
+        #     cpu: "200m"
+        # livenessProbe:
+        #   httpGet:
+        #     path: /health
+        #     port: 8080
+        #   initialDelaySeconds: 0
+        #   periodSeconds: 5
+        #   timeoutSeconds: 1
+        #   successThreshold: 1
+        #   failureThreshold: 1
+        # readinessProbe:
+        #   httpGet:
+        #     path: /read
+        #     port: 8080
+        #   initialDelaySeconds: 0
+        #   periodSeconds: 1
+        #   timeoutSeconds: 1
+        #   successThreshold: 1
+        #   failureThreshold: 1
         ports:
         - containerPort: 8080
         env:
@@ -59,4 +59,4 @@ spec:
     - port: 80
       targetPort: 8080
       nodePort: 30000
-  type: NodePort
+  type: LoadBalancer
